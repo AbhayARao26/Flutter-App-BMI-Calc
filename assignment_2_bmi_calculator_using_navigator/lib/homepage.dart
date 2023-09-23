@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       finalBmi = (var1 / pow((var2 / 100), 2));
     });
-    // Navigate to the result page with the calculated BMI
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -197,7 +196,7 @@ class ResultPage extends StatelessWidget {
 
   const ResultPage({super.key, required this.finalBmi});
 
-  Color _getTextColor() {
+  Color _textColor() {
     if (finalBmi < 18.5) {
       return const Color.fromARGB(255, 10, 14, 176);
     } else if (finalBmi < 24.9) {
@@ -231,7 +230,7 @@ class ResultPage extends StatelessWidget {
               "Your BMI is",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: _getTextColor(), // Set text color based on BMI value
+                  color: _textColor(), // Set text color based on BMI value
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
@@ -241,7 +240,7 @@ class ResultPage extends StatelessWidget {
               "$finalBmi",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: _getTextColor(),
+                  color: _textColor(),
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
@@ -251,7 +250,7 @@ class ResultPage extends StatelessWidget {
               "\nUnderweight",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: _getTextColor(),
+                  color: _textColor(),
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
@@ -261,7 +260,7 @@ class ResultPage extends StatelessWidget {
               "\nNormal weight",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: _getTextColor(),
+                  color: _textColor(),
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
@@ -271,7 +270,7 @@ class ResultPage extends StatelessWidget {
               "\nOverweight",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: _getTextColor(),
+                  color: _textColor(),
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
